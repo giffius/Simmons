@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔑</text></svg>">
-    <title>Our Locksmith Services | Simmons Lock & Key</title>
-    <meta name="description" content="Simmons Lock & Key offers comprehensive residential, commercial, and automotive locksmith services in Grand Junction. Trusted expertise since 1945. After-hours emergency available.">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>Simmons Lock & Key | Grand Junction Locksmith | Since 1945</title>
+    <meta name="description" content="Simmons Lock & Key Inc.: Your trusted, family-owned Grand Junction locksmith since 1945. Quick, dependable service for residential, commercial, and auto needs. 24/7 emergency service.">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* --- Global Variables and Reset --- */
+        /* --- Global Variables and Reset (Red & Gray Palette) --- */
         :root {
             --primary-color: #333333; /* Dark Gray/Black */
             --secondary-color: #D9001D; /* Alert Red */
-            --text-color: #333333; /* Dark Gray */
+            --text-color: #333333;
             --light-bg: #F8F8F8; /* Off-White */
             --white: #ffffff;
             --cta-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -53,7 +53,7 @@
             text-align: center;
             text-decoration: none;
             border-radius: 5px;
-            transition: background-color var(--transition-speed), transform var(--transition-speed), box-shadow var(--transition-speed);
+            transition: all var(--transition-speed);
             cursor: pointer;
             box-shadow: var(--cta-shadow);
             border: none;
@@ -71,11 +71,11 @@
         }
 
         .section-title {
+            font-family: 'Poppins', sans-serif;
             text-align: center;
             font-size: 2rem;
             margin-bottom: 20px;
             color: var(--primary-color);
-            border-bottom: 3px solid var(--secondary-color);
             padding-bottom: 10px;
             display: inline-block;
         }
@@ -105,6 +105,7 @@
             font-weight: 700;
             color: var(--white);
             text-decoration: none;
+            font-family: 'Poppins', sans-serif;
         }
 
         .nav-menu {
@@ -158,71 +159,117 @@
             margin: 0 auto;
         }
 
-        /* --- Services Grid Section --- */
-        .services-intro {
-            padding: 40px 0 20px 0;
+        /* --- Hero Section (High Contrast, Bold Text) --- */
+        .hero {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 80px 0 60px 0;
             text-align: center;
         }
 
-        .services-grid {
-            display: grid;
-            gap: 25px;
-            padding: 20px 0 40px 0;
+        .hero h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            line-height: 1.1;
         }
 
-        .service-card {
+        .hero h1 span {
+            color: var(--secondary-color);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 10px auto 40px auto;
+        }
+
+        /* --- Value Proposition Section (Clean Cards) --- */
+        .highlights {
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .highlight-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .card {
             background-color: var(--white);
             padding: 30px;
             border-radius: 8px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-            border-left: 5px solid var(--secondary-color);
+            text-align: center;
+            border-bottom: 4px solid var(--secondary-color);
             transition: transform 0.3s ease;
         }
         
-        .service-card:hover {
+        .card:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
         }
 
-        .service-card h3 {
+        .card h3 {
+            font-family: 'Poppins', sans-serif;
             color: var(--primary-color);
-            font-size: 1.5rem;
             margin-bottom: 10px;
-            border-bottom: 1px dashed #ccc;
-            padding-bottom: 5px;
-        }
-
-        .service-card ul {
-            list-style: none;
-            padding-left: 0;
-            margin-top: 15px;
-        }
-
-        .service-card li {
-            position: relative;
-            padding-left: 20px;
-            margin-bottom: 8px;
-        }
-
-        .service-card li::before {
-            content: '✓';
-            color: var(--secondary-color);
-            font-weight: 700;
-            position: absolute;
-            left: 0;
+            font-size: 1.5rem;
         }
         
-        /* --- Emergency Banner Section --- */
-        .emergency-banner {
-            background-color: var(--secondary-color);
-            color: var(--white);
-            padding: 40px 0;
+        /* Icon styling */
+        .card .icon {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+            display: block;
+        }
+        
+        /* --- Testimonial Section (Inverted Colors for Impact) --- */
+        .testimonial {
+            background-color: var(--primary-color);
+            color: var(--light-bg);
+            padding: 50px 0;
             text-align: center;
         }
+
+        .testimonial .section-title {
+            color: var(--white);
+            margin-bottom: 30px;
+        }
+
+        .quote {
+            font-style: italic;
+            font-size: 1.1rem;
+            margin: 20px auto;
+            max-width: 700px;
+            position: relative;
+            padding: 0 15px;
+        }
         
-        .emergency-banner h2 {
-            font-size: 1.8rem;
-            margin-bottom: 10px;
+        /* Quote icon styling (Subtle use of Red) */
+        .quote::before {
+            content: '“';
+            font-family: Georgia, serif;
+            font-size: 4rem;
+            position: absolute;
+            left: 0;
+            top: -10px;
+            color: var(--secondary-color);
+            opacity: 0.8;
+            line-height: 1;
+        }
+
+        .quote footer {
+            margin-top: 15px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-align: right;
+            padding-right: 20px;
         }
 
         /* --- Sticky Bottom CTAs (Consistent Across All Pages) --- */
@@ -247,9 +294,10 @@
             white-space: nowrap; /* Prevent text wrap */
             background-color: var(--primary-color);
             color: var(--white);
+            box-shadow: none;
         }
-        
-        .sticky-ctas .cta-button:hover {
+
+        .sticky-ctas .cta-button.emergency-cta {
             background-color: var(--secondary-color);
         }
 
@@ -316,9 +364,23 @@
                 margin-left: 15px;
             }
             
-            /* Services Grid */
-            .services-grid {
-                grid-template-columns: repeat(3, 1fr);
+            /* Home Content */
+            .hero {
+                padding: 120px 0 90px 0;
+            }
+            
+            .hero h1 {
+                font-size: 4.5rem;
+            }
+            
+            .highlight-cards {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+
+            .card {
+                flex: 1;
+                margin: 0 10px;
             }
 
             /* Sticky CTA cleanup on larger screens */
@@ -354,94 +416,58 @@
     </header>
 
     <main>
-        <section class="container services-intro">
-            <h1 class="section-title">Comprehensive Locksmith Services</h1>
-            <p style="font-size: 1.1rem; max-width: 800px; margin: 0 auto 30px;">
-                Serving the Grand Valley since 1945, Simmons Lock & Key provides dependable security solutions for every aspect of your life. Get the quick, professional service you deserve.
-            </p>
+        <section class="hero">
+            <div class="container">
+                <h1>The Grand Valley's <br><span>Trusted Locksmith</span></h1>
+                <p>Family-owned and serving Grand Junction with quick, reliable, and professional service since **1945**.</p>
+                <a href="services.html" class="cta-button cta-primary">View Our Services</a>
+                <a href="contact.html" class="cta-button" style="background-color: var(--white); color: var(--primary-color); margin-left: 15px;">Get a Quote</a>
+            </div>
         </section>
 
-        <section class="container">
-            <div class="services-grid">
-                
-                <div class="service-card">
-                    <h3>Residential Locksmith</h3>
-                    <p>Protecting your family and home with trusted, modern security systems and services.</p>
-                    <ul>
-                        <li>Home Lockouts & Emergency Entry</li>
-                        <li>New Lock Installation & Repair</li>
-                        <li>Door Hardware & Smart Lock Integration</li>
-                        <li>Re-keying Services (Moving or lost keys)</li>
-                        <li>Mailbox and Gate Locksmith Services</li>
-                    </ul>
-                    <a href="contact.html" class="cta-button cta-primary" style="margin-top: 15px;">Secure Your Home</a>
+        <section class="container highlights">
+            <h2 class="section-title">Security Solutions Built on Trust</h2>
+            <div class="highlight-cards">
+                <div class="card">
+                    <span class="icon">🚨</span>
+                    <h3>24/7 Emergency Service</h3>
+                    <p>Locked out? We provide after-hours, quick-response emergency service when you need security the most.</p>
                 </div>
-
-                <div class="service-card">
-                    <h3>Commercial Security</h3>
-                    <p>Securing your business assets with professional, high-grade locking mechanisms and access control.</p>
-                    <ul>
-                        <li>Master Key System Creation & Maintenance</li>
-                        <li>High-Security Lock Installation</li>
-                        <li>Panic Bar and Exit Device Installation</li>
-                        <li>Door Closer Installation and Repair</li>
-                        <li>File Cabinet & Desk Lock Services</li>
-                    </ul>
-                    <a href="contact.html" class="cta-button cta-primary" style="margin-top: 15px;">Protect Your Business</a>
+                <div class="card">
+                    <span class="icon">⚙️</span>
+                    <h3>Full-Service Expertise</h3>
+                    <p>From residential re-keys and commercial master systems to automotive lockouts and safe services.</p>
                 </div>
-
-                <div class="service-card">
-                    <h3>Automotive Locksmith</h3>
-                    <p>Quick and efficient service for vehicle lockouts, key duplication, and ignition repair.</p>
-                    <ul>
-                        <li>Car & Truck Lockouts</li>
-                        <li>Car Key Replacement (including transponder keys)</li>
-                        <li>Ignition Repair and Replacement</li>
-                        <li>Broken Key Extraction</li>
-                        <li>Motorcycle and ATV Key Services</li>
-                    </ul>
-                    <a href="contact.html" class="cta-button cta-primary" style="margin-top: 15px;">Get Back on the Road</a>
-                </div>
-                
-                <div class="service-card">
-                    <h3>Safe & Vault Services</h3>
-                    <p>Expert handling of all types of safes, from small home units to large commercial vaults.</p>
-                    <ul>
-                        <li>Safe Combination Changes</li>
-                        <li>Safe Opening & Lockout Service</li>
-                        <li>Safe Repair and Troubleshooting</li>
-                        <li>Installation of New Safe Locks</li>
-                        <li>Fire-Rated Safe Consultation</li>
-                    </ul>
-                </div>
-                
-                <div class="service-card">
-                    <h3>Key Duplication & Specialty</h3>
-                    <p>Precision key cutting and specialized services for unique locking needs.</p>
-                    <ul>
-                        <li>Precision Key Cutting for all types (Standard, Laser, Tubular)</li>
-                        <li>Antique Key Duplication (e.g., Hope Chests)</li>
-                        <li>Lock Repair & Rekeying for existing hardware</li>
-                        <li>Padlocks and Shackles</li>
-                        <li>Keyless Entry System Installation</li>
-                    </ul>
+                <div class="card">
+                    <span class="icon">🏅</span>
+                    <h3>Since 1945</h3>
+                    <p>Nearly eight decades of experience means professional, knowledgeable, and dependable work—guaranteed.</p>
                 </div>
             </div>
         </section>
         
-        <section class="emergency-banner">
-            <div class="container">
-                <h2>NEED IMMEDIATE HELP?</h2>
-                <p style="font-size: 1.2rem; margin-bottom: 20px;">We provide **24/7 After Hour Emergency Service** when you need it most. Call us now!</p>
-                <a href="tel:9702425562" class="cta-button cta-primary" style="background-color: var(--white); color: var(--secondary-color);">📞 Emergency Call: 970-242-5562</a>
-            </div>
+        <hr style="border: none; border-top: 1px solid #ddd; margin: 20px auto; width: 80%;">
+
+        <section class="container" style="text-align: center; padding: 20px 0 40px 0;">
+            <h2 class="section-title" style="border-bottom: 3px solid var(--secondary-color);">Need Help Immediately?</h2>
+            <p style="font-size: 1.1rem; margin-bottom: 25px;">Don't wait. Call our dedicated line for immediate, expert locksmith assistance.</p>
+            <a href="tel:9702425562" class="cta-button cta-primary" style="font-size: 1.3rem;">📞 Call Emergency Line: 970-242-5562</a>
         </section>
 
+        <section class="testimonial">
+            <div class="container">
+                <h2 class="section-title">What Our Community Says</h2>
+                <blockquote class="quote">
+                    <p>"Great customer service. Very friendly, quick, and knowledgeable. The best locksmith in Grand Junction!"</p>
+                    <footer>— A Highly Satisfied Local Customer</footer>
+                </blockquote>
+            </div>
+        </section>
     </main>
 
     <div class="sticky-ctas">
-        <a href="tel:9702425562" class="cta-button cta-primary">📞 Call Now</a>
-        <a href="https://maps.google.com/?q=489+1/2+28+1/2+Road,+Grand+Junction,+CO+81501" target="_blank" class="cta-button cta-primary">📍 Directions</a>
+        <a href="tel:9702425562" class="cta-button emergency-cta">🚨 Emergency Call</a>
+        <a href="https://maps.app.goo.gl/r6V8q5vC5p4FjYyR8" target="_blank" class="cta-button cta-primary">📍 Get Directions</a>
     </div>
 
     <footer>
