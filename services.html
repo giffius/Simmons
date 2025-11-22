@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔑</text></svg>">
+    <title>Our Locksmith Services | Simmons Lock & Key</title>
+    <meta name="description" content="Simmons Lock & Key offers comprehensive residential, commercial, and automotive locksmith services in Grand Junction. Trusted expertise since 1945. After-hours emergency available.">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* --- Global Variables and Reset --- */
+        :root {
+            --primary-color: #333333; /* Dark Gray/Black */
+            --secondary-color: #D9001D; /* Alert Red */
+            --text-color: #333333; /* Dark Gray */
+            --light-bg: #F8F8F8; /* Off-White */
+            --white: #ffffff;
+            --cta-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            --transition-speed: 0.3s;
+        }
+
+        /* Mobile-First Reset */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-bg);
+            min-height: 100vh; /* Ensures full viewport height for sticky elements */
+            display: flex;
+            flex-direction: column;
+            padding-bottom: 70px; /* Space for the sticky footer CTAs */
+        }
+
+        /* --- Utility Classes --- */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 12px 25px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color var(--transition-speed), transform var(--transition-speed), box-shadow var(--transition-speed);
+            cursor: pointer;
+            box-shadow: var(--cta-shadow);
+            border: none;
+        }
+
+        .cta-primary {
+            background-color: var(--secondary-color);
+            color: var(--white);
+        }
+
+        .cta-primary:hover {
+            background-color: #b30018; /* Slightly darker red */
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--secondary-color);
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+
+        /* --- Navigation Styles (Consistent Across All Pages) --- */
+        header {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo a {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--white);
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            list-style: none;
+            display: none; /* Hidden on mobile by default */
+        }
+
+        .nav-menu a {
+            color: var(--white);
+            text-decoration: none;
+            padding: 8px 15px;
+            display: block;
+            transition: background-color var(--transition-speed);
+            border-radius: 3px;
+        }
+
+        .nav-menu a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Hamburger Icon */
+        .hamburger {
+            font-size: 2rem;
+            cursor: pointer;
+            display: block; /* Visible on mobile */
+            color: var(--secondary-color);
+        }
+
+        /* Mobile Dropdown Menu */
+        .nav-menu.active {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 60px; /* Adjust based on header height */
+            right: 0;
+            width: 100%;
+            background-color: var(--primary-color);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        .nav-menu.active li {
+            padding: 10px 0;
+            width: 100%;
+        }
+
+        /* Centering the text in the mobile menu */
+        .nav-menu.active li a {
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        /* --- Services Grid Section --- */
+        .services-intro {
+            padding: 40px 0 20px 0;
+            text-align: center;
+        }
+
+        .services-grid {
+            display: grid;
+            gap: 25px;
+            padding: 20px 0 40px 0;
+        }
+
+        .service-card {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            border-left: 5px solid var(--secondary-color);
+            transition: transform 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-card h3 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            border-bottom: 1px dashed #ccc;
+            padding-bottom: 5px;
+        }
+
+        .service-card ul {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 15px;
+        }
+
+        .service-card li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+        }
+
+        .service-card li::before {
+            content: '✓';
+            color: var(--secondary-color);
+            font-weight: 700;
+            position: absolute;
+            left: 0;
+        }
+        
+        /* --- Emergency Banner Section --- */
+        .emergency-banner {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .emergency-banner h2 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        /* --- Sticky Bottom CTAs (Consistent Across All Pages) --- */
+        .sticky-ctas {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            background-color: var(--white);
+            border-top: 1px solid #ccc;
+            padding: 10px 0;
+            z-index: 999;
+        }
+
+        .sticky-ctas .cta-button {
+            flex: 1;
+            margin: 0 5px;
+            font-size: 0.9rem;
+            padding: 10px 5px;
+            white-space: nowrap; /* Prevent text wrap */
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+        
+        .sticky-ctas .cta-button:hover {
+            background-color: var(--secondary-color);
+        }
+
+        /* --- Footer (Consistent Across All Pages) --- */
+        footer {
+            background-color: var(--primary-color);
+            color: var(--light-bg);
+            padding: 30px 0;
+            text-align: center;
+            margin-top: auto; /* Pushes the footer to the bottom */
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .footer-info p {
+            margin: 5px 0;
+        }
+
+        .footer-info a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            transition: color var(--transition-speed);
+        }
+
+        .footer-info a:hover {
+            color: var(--white);
+        }
+
+        .social-links a {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            margin: 0 10px;
+            text-decoration: none;
+            transition: transform var(--transition-speed);
+        }
+
+        .social-links a:hover {
+            transform: scale(1.1);
+        }
+
+        /* --- Tablet/Desktop Media Query (Mobile-First Transition) --- */
+        @media (min-width: 768px) {
+            /* Navigation */
+            .hamburger {
+                display: none; /* Hide hamburger on tablet/desktop */
+            }
+
+            .nav-menu {
+                display: flex; /* Show navigation menu */
+                flex-direction: row;
+                position: static;
+                width: auto;
+                background-color: transparent;
+                box-shadow: none;
+            }
+
+            .nav-menu li {
+                padding: 0;
+                margin-left: 15px;
+            }
+            
+            /* Services Grid */
+            .services-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            /* Sticky CTA cleanup on larger screens */
+            .sticky-ctas {
+                display: none; /* Hide sticky CTAs on desktop for cleaner design */
+            }
+            
+            body {
+                padding-bottom: 0; /* Remove padding since sticky CTA is hidden */
+            }
+
+            .footer-content {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-content">
+            <div class="logo"><a href="index.html">Simmons Lock & Key 🔑</a></div>
+            
+            <div class="hamburger" id="hamburger">☰</div>
+
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <section class="container services-intro">
+            <h1 class="section-title">Comprehensive Locksmith Services</h1>
+            <p style="font-size: 1.1rem; max-width: 800px; margin: 0 auto 30px;">
+                Serving the Grand Valley since 1945, Simmons Lock & Key provides dependable security solutions for every aspect of your life. Get the quick, professional service you deserve.
+            </p>
+        </section>
+
+        <section class="container">
+            <div class="services-grid">
+                
+                <div class="service-card">
+                    <h3>Residential Locksmith</h3>
+                    <p>Protecting your family and home with trusted, modern security systems and services.</p>
+                    <ul>
+                        <li>Home Lockouts & Emergency Entry</li>
+                        <li>New Lock Installation & Repair</li>
+                        <li>Door Hardware & Smart Lock Integration</li>
+                        <li>Re-keying Services (Moving or lost keys)</li>
+                        <li>Mailbox and Gate Locksmith Services</li>
+                    </ul>
+                    <a href="contact.html" class="cta-button cta-primary" style="margin-top: 15px;">Secure Your Home</a>
+                </div>
+
+                <div class="service-card">
+                    <h3>Commercial Security</h3>
+                    <p>Securing your business assets with professional, high-grade locking mechanisms and access control.</p>
+                    <ul>
+                        <li>Master Key System Creation & Maintenance</li>
+                        <li>High-Security Lock Installation</li>
+                        <li>Panic Bar and Exit Device Installation</li>
+                        <li>Door Closer Installation and Repair</li>
+                        <li>File Cabinet & Desk Lock Services</li>
+                    </ul>
+                    <a href="contact.html" class="cta-button cta-primary" style="margin-top: 15px;">Protect Your Business</a>
+                </div>
+
+                <div class="service-card">
+                    <h3>Automotive Locksmith</h3>
+                    <p>Quick and efficient service for vehicle lockouts, key duplication, and ignition repair.</p>
+                    <ul>
+                        <li>Car & Truck Lockouts</li>
+                        <li>Car Key Replacement (including transponder keys)</li>
+                        <li>Ignition Repair and Replacement</li>
+                        <li>Broken Key Extraction</li>
+                        <li>Motorcycle and ATV Key Services</li>
+                    </ul>
+                    <a href="contact.html" class="cta-button cta-primary" style="margin-top: 15px;">Get Back on the Road</a>
+                </div>
+                
+                <div class="service-card">
+                    <h3>Safe & Vault Services</h3>
+                    <p>Expert handling of all types of safes, from small home units to large commercial vaults.</p>
+                    <ul>
+                        <li>Safe Combination Changes</li>
+                        <li>Safe Opening & Lockout Service</li>
+                        <li>Safe Repair and Troubleshooting</li>
+                        <li>Installation of New Safe Locks</li>
+                        <li>Fire-Rated Safe Consultation</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <h3>Key Duplication & Specialty</h3>
+                    <p>Precision key cutting and specialized services for unique locking needs.</p>
+                    <ul>
+                        <li>Precision Key Cutting for all types (Standard, Laser, Tubular)</li>
+                        <li>Antique Key Duplication (e.g., Hope Chests)</li>
+                        <li>Lock Repair & Rekeying for existing hardware</li>
+                        <li>Padlocks and Shackles</li>
+                        <li>Keyless Entry System Installation</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <section class="emergency-banner">
+            <div class="container">
+                <h2>NEED IMMEDIATE HELP?</h2>
+                <p style="font-size: 1.2rem; margin-bottom: 20px;">We provide **24/7 After Hour Emergency Service** when you need it most. Call us now!</p>
+                <a href="tel:9702425562" class="cta-button cta-primary" style="background-color: var(--white); color: var(--secondary-color);">📞 Emergency Call: 970-242-5562</a>
+            </div>
+        </section>
+
+    </main>
+
+    <div class="sticky-ctas">
+        <a href="tel:9702425562" class="cta-button cta-primary">📞 Call Now</a>
+        <a href="https://maps.google.com/?q=489+1/2+28+1/2+Road,+Grand+Junction,+CO+81501" target="_blank" class="cta-button cta-primary">📍 Directions</a>
+    </div>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-info">
+                <p>Simmons Lock & Key, Inc. | Since 1945</p>
+                <p>489 1/2 28 1/2 Road, Grand Junction, CO 81501</p>
+            </div>
+            <div class="social-links">
+                <a href="https://www.facebook.com/simmonskey/" target="_blank" aria-label="Find us on Facebook">f</a>
+                <a href="mailto:simmonssupport@simmonskey.com" aria-label="Email us">✉️</a>
+            </div>
+            <div class="footer-info">
+                <p>Phone: <a href="tel:9702425562">970-242-5562</a></p>
+                <p>After-Hours Emergency Service Available</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // --- JavaScript for Mobile Navigation Toggle (Hamburger Menu) ---
+        document.addEventListener('DOMContentLoaded', () => {
+            const hamburger = document.getElementById('hamburger');
+            const navMenu = document.getElementById('nav-menu');
+
+            // Function to toggle the menu's active class
+            hamburger.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+            });
+
+            // Close the menu if a link is clicked (mobile friendly UX)
+            navMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (navMenu.classList.contains('active')) {
+                        navMenu.classList.remove('active');
+                    }
+                });
+            });
+
+            // Close the menu if clicked outside of it on mobile
+            document.addEventListener('click', (event) => {
+                const isClickInsideNav = navMenu.contains(event.target) || hamburger.contains(event.target);
+                
+                if (!isClickInsideNav && navMenu.classList.contains('active')) {
+                    navMenu.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
